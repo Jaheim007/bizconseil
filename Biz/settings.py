@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ts=64yi=uqqe^)_!h304*oz6@nul1f%&5n%2m#gsja3(xco=j4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["bizconseil.herokuapp.com"]
+ALLOWED_HOSTS = ["codebizapp.herokuapp.com"]
 
 
 # Application definition
@@ -42,13 +42,12 @@ INSTALLED_APPS = [
     'Service', 
     'Site',
     'rest_framework',
-    'drf_yasg2',
+
    
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,7 +79,7 @@ TEMPLATES = [
 
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 
 
@@ -140,7 +139,6 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")    
