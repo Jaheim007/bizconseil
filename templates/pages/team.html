@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block 'content' %}
+
+            <div class="container-xxl bg-primary page-header">
+                <div class="container text-center">
+                    <h1 class="text-white animated zoomIn mb-3">Our Team</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Our Team</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Team Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Team</div>
+                    <h2 class="mb-5">{{ section.section_team_title }}</h2>
+                </div>
+                <div class="row g-4">
+                    {% for team in team %}
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="team-item">
+                                <h5>{{team.name}}</h5>
+                                <p class="mb-4">{{team.profession}}</p>
+                                <img class="img-fluid rounded-circle w-100 mb-4" src="{{team.img.url}}" alt="">
+                                    <div class="d-flex justify-content-center">
+                                        {% for team in team.social_team.all %}
+                                            <a class="btn btn-square text-primary bg-white m-1" href="{{ team.url }}"><i class="{{ team.icon }}"></i></a>
+                                        {% endfor %}
+                                    </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+        
+{% endblock 'content' %}
+        
